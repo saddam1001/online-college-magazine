@@ -1,0 +1,44 @@
+create table article(
+id number(5) generated always as identity,
+ArticleName varchar2(20),
+ArticleType varchar2(20),
+CategoryType varchar2(20),
+CategoryName varchar2(20),
+PostDate date,
+ArticleDesc blob,
+FileType varchar2(10)
+);
+
+
+
+
+create table new_student(
+student_id number(5) generated always as identity,
+name varchar2(10) not null,
+image blob not null,
+email varchar2(30) not null,
+password varchar2(10) not null,
+mobile number(10) not null,
+dob date not null,
+constraint pk_student_id primary key(student_id));
+
+
+
+create table faculty(
+id number(5) generated always as identity,
+name varchar2(10) not null,
+image blob,
+email varchar2(30) not null,
+password varchar2(10) not null,
+mobile number(10) not null,
+dob date not null
+);
+
+create table moderator(id number(5) generated always as identity, email varchar2(30), password varchar2(20));
+
+
+create table feedback(id number(5) generated always as identity ,firstname varchar2(20),lastname varchar2(20),email varchar2(30),feed varchar(256));
+
+
+create table admin(username varchar2(10), password varchar2(20));
+insert into admin values('admin','admin');
